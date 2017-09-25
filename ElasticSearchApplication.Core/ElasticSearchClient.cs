@@ -19,9 +19,11 @@ namespace ElasticSearchApplication.Core
             {
                 new Uri("http://localhost:9200/")
             };
+            
             connectionPool = new StaticConnectionPool(nodes);
             connectionSettings = new ConnectionSettings(connectionPool);
             elasticClient = new ElasticClient(connectionSettings);
+            
             return elasticClient;
         }
     }
